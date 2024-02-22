@@ -12,18 +12,18 @@ export default function CreatePost() {
   
 
   async function createNewPost(ev) {
+    ev.preventDefault();
     const data = new FormData();
     data.set("title", title);
     data.set("summary", summary);
     data.set("content", content);
     data.set("file", files[0]);
-    ev.preventDefault();
+    
     console.log(files);
     const response = await fetch("https://mern-blog-back-33ik.onrender.com/post", {
       method: "POST",
       body: data,
       credentials: 'include',
-      
     });
 
     if (response.ok) {
