@@ -22,7 +22,8 @@ export default function CreatePost() {
     const response = await fetch("https://mern-blog-back-33ik.onrender.com/post", {
       method: "POST",
       body: data,
-      credentials: 'include'
+      credentials: 'include',
+      mode: 'no-cors'
     });
 
     if (response.ok) {
